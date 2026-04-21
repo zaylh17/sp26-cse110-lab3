@@ -3,9 +3,26 @@
   <head>
     <!-- METADATA SECTION: title, meta, link -->
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Meeting minutes for the Spring Bake Sale Committee" />
     <title>Bake Sale Committee - Meeting Minutes</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- 3rd party Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- External CSS stylesheet (preferred method) -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Internal CSS with <style> (one example required) -->
+    <style>
+      /* Internal CSS example: style the details summary arrow color */
+      details[open] summary {
+        color: #c0392b;
+      }
+    </style>
   </head>
   <body>
     <!-- HEADER: goes at the top of the page -->
@@ -15,7 +32,7 @@
       <h3>April 12, 2026</h3>
     </header>
 
-    <!-- NAV: navigation links for the page -->
+    <!-- NAV: navigation links for the page (Flexbox with 8 children) -->
     <nav>
       <p><strong>Jump to:</strong></p>
       <ul>
@@ -26,7 +43,7 @@
         <li><a href="#misc">Miscellaneous</a></li>
         <li><a href="#diagrams">Diagrams</a></li>
         <li><a href="#media">Recordings</a></li>
-        <li><a href="#feedback_form">Feedback Form</a></li>
+        <li><a href="#feedback-form">Feedback Form</a></li>
       </ul>
     </nav>
 
@@ -36,7 +53,7 @@
     <main>
 
       <!-- ATTENDANCE SECTION -->
-      <section id="attendance">
+      <section id="attendance" class="section-card">
         <h2>Attendance</h2>
         <ol>
           <li><b>Miguel Garcia</b> — <span>President</span></li>
@@ -45,28 +62,30 @@
           <li><b>Daniel Lee</b> — VP Marketing</li>
           <li><b>Ellie Morlan</b> — Treasurer</li>
         </ol>
-        <p><em>Absent:</em> <i>Myo Tun</i> (unexcused)</p>
+        <!-- Inline CSS example (one required) -->
+        <p style="color: #c0392b; font-weight: bold;"><em>Absent:</em> <i>Myo Tun</i> (unexcused)</p>
       </section>
 
       <hr />
 
-      <!-- AGENDA SECTION -->
-      <section id="agenda">
+      <!-- AGENDA SECTION with CSS Grid -->
+      <section id="agenda" class="section-card">
         <h2>Agenda</h2>
-        <ol>
-          <li>Review budget</li>
-          <li>Finalize bake sale date and location</li>
-          <li>Discuss menu items and pricing</li>
-          <li>Assign roles</li>
-          <li>Plan marketing and outreach</li>
-          <li>Open forum</li>
-        </ol>
+        <!-- Grid layout with 6 children -->
+        <div class="agenda-grid">
+          <div class="grid-item">1. Review budget</div>
+          <div class="grid-item">2. Finalize date &amp; location</div>
+          <div class="grid-item">3. Menu items &amp; pricing</div>
+          <div class="grid-item">4. Assign roles</div>
+          <div class="grid-item">5. Marketing &amp; outreach</div>
+          <div class="grid-item">6. Open forum</div>
+        </div>
       </section>
 
       <hr />
 
       <!-- UNFINISHED BUSINESS SECTION -->
-      <section id="budget_review">
+      <section id="budget_review" class="section-card highlight">
         <h2>Budget Review</h2>
         <ul>
           <li>
@@ -78,7 +97,7 @@
       <hr />
 
       <!-- NEW BUSINESS SECTION -->
-      <section id="new_business">
+      <section id="new_business" class="section-card">
         <h2>New Business</h2>
 
         <h3>Venue Confirmation</h3>
@@ -121,7 +140,7 @@
       <hr />
 
       <!-- MISCELLANEOUS SECTION -->
-      <section id="misc">
+      <section id="misc" class="section-card">
         <h2>Miscellaneous Comments / Questions / Concerns</h2>
         <ul>
           <li>Miguel asked if we need to get <strong>food handling permits</strong>. Zay will look into this and report back by the next meeting.</li>
@@ -134,33 +153,23 @@
       <hr />
 
       <!-- DIAGRAMS / IMAGES SECTION -->
-      <section id="diagrams">
+      <section id="diagrams" class="section-card">
         <h2>Photos</h2>
         <p>Below are photos during the meeting:</p>
-        <!-- 
-          TODO: Replace these src paths with your actual image files.
-          Put your images in the same folder as this HTML file or a subfolder.
-        -->
         <img
           src="images/poster.jpg"
           alt="poster ideas"
-          width="600"
         />
-        <br />
       </section>
 
       <hr />
 
       <!-- AUDIO & VIDEO SECTION -->
-      <section id="media">
-        <h2>Meeting Recordings & Recipes</h2>
+      <section id="media" class="section-card">
+        <h2>Meeting Recordings &amp; Recipes</h2>
 
         <h3>Audio Recording</h3>
         <p>A 30-second audio clip from the meeting:</p>
-        <!--
-          TODO: Replace the src with your actual audio file path.
-          Record a short 30-second audio clip and save it (e.g., as .mp3 or .ogg).
-        -->
         <audio controls>
           <source src="audio/meeting-audio.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
@@ -168,10 +177,6 @@
 
         <h3>Recipe Recording</h3>
         <p>A 30-second video clip from the meeting:</p>
-        <!--
-          TODO: Replace the src with your actual video file path.
-          Record a short 30-second video and save it (e.g., as .mp4 or .webm).
-        -->
         <video controls width="600">
           <source src="video/meeting-video.mp4" type="video/mp4" />
           Your browser does not support the video element.
@@ -180,8 +185,8 @@
 
       <hr />
 
-      <!-- FORM SECTION (doesn't have to relate to meeting minutes) -->
-      <section id="feedback-form">
+      <!-- FORM SECTION -->
+      <section id="feedback-form" class="section-card">
         <h2>Bake Sale Feedback Form</h2>
         <p>Let us know your thoughts so we can make the next bake sale even better!</p>
 
